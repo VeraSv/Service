@@ -10,8 +10,7 @@ namespace WebApplication1.Models
     {
         public string FileName { get; set; }
         public FileModel(string name)
-        {
-
+        { 
             FileName = name;
 
         }
