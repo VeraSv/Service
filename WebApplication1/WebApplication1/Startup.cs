@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using React.AspNet;
 using JavaScriptEngineSwitcher.ChakraCore;
 using JavaScriptEngineSwitcher.Extensions.MsDependencyInjection;
+using GrpcService1;
 
 namespace WebApplication1
 {
@@ -22,14 +23,17 @@ namespace WebApplication1
             services.AddMemoryCache();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddReact();
+            
             services.AddJsEngineSwitcher(options => options.DefaultEngineName = ChakraCoreJsEngine.EngineName).AddChakraCore();
             services.AddControllers();
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseDeveloperExceptionPage();
+           
             app.UseReact(config => { });
             app.UseDefaultFiles();
             app.UseStaticFiles();
@@ -38,6 +42,7 @@ namespace WebApplication1
             {
                 endpoints.MapControllers();
             });
+           
         }
     }
 }

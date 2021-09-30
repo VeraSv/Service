@@ -1,25 +1,37 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using WebApplication1;
-using NPOI.SS.UserModel;
-using NPOI.XSSF.UserModel;
 using System.IO;
+using System;
+using Microsoft.AspNetCore.Http;
 using WebApplication1.Models;
-
+using System.Threading.Tasks;
+using GrpcService1;
+using Grpc.Net.Client;
+using System.Net.Http;
 namespace WebApplication1.Controllers
 {
-    public class FileController :Controller 
+    public class FileController : Controller
     {
-        [HttpPost]
-        [Route("api/UploadFile")]
-        public void Upload(FileModel file)
-        {
-          /* string path = Path.GetFullPath(file);
 
-            Program.readFile(path);*/
+        [HttpPost]
+        [Route("api/uploadfile")]
+        public async void AddFile(IFormFile myFile)
+        {
+            if (myFile != null)
+            {
+                using (var stream = new MemoryStream()) 
+                {
+                    myFile.CopyTo(stream);
+                    var fileButes = stream.ToArray();
+
+                    using var channel = GrpcChannel.ForAddress("https://localhost:5001");
+
+                    var client = new Greeter.GreeterClient(channel);
+                    var reply = await GreeterService1.GreeterService.upload(new File { content = fileButes });
+                }                
+               
+
+            }
         }
+
     }
 }

@@ -11,6 +11,12 @@
           "lib/netstandard2.0/AdvancedStringBuilder.dll": {}
         }
       },
+      "axios/0.16.2": {
+        "type": "package"
+      },
+      "axios.js/0.18.0": {
+        "type": "package"
+      },
       "Google.Protobuf/3.18.0": {
         "type": "package",
         "dependencies": {
@@ -1007,6 +1013,34 @@
         "lib/netstandard1.0/AdvancedStringBuilder.xml",
         "lib/netstandard2.0/AdvancedStringBuilder.dll",
         "lib/netstandard2.0/AdvancedStringBuilder.xml"
+      ]
+    },
+    "axios/0.16.2": {
+      "sha512": "Xp86hC7/Z4CDwlbM0udtI/Q/AKxsQG7EiZItwtqj3KeZKC1xKxNDImtNPB5e7i6PK2EdOfGns5BtVR6u1V/NEQ==",
+      "type": "package",
+      "path": "axios/0.16.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/axios.js",
+        "Content/Scripts/axios.min.js",
+        "axios.0.16.2.nupkg.sha512",
+        "axios.nuspec"
+      ]
+    },
+    "axios.js/0.18.0": {
+      "sha512": "Ds7LuSKfty2KQmqzagcRDJAvuf5uUP4TxniPNImGW0ybgjqo4mjVnOXMWEWy9C3jRMFAcRKrTdzOGTpwJXdDbA==",
+      "type": "package",
+      "path": "axios.js/0.18.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "axios.js.0.18.0.nupkg.sha512",
+        "axios.js.nuspec",
+        "content/Scripts/axios.js",
+        "content/Scripts/axios.map",
+        "content/Scripts/axios.min.js",
+        "content/Scripts/axios.min.map"
       ]
     },
     "Google.Protobuf/3.18.0": {
@@ -3794,7 +3828,9 @@
       "JavaScriptEngineSwitcher.V8.Native.win-x86 >= 3.13.1",
       "NPOI >= 2.5.4",
       "React.AspNet >= 5.2.11",
-      "React.Web.Mvc4 >= 5.2.11"
+      "React.Web.Mvc4 >= 5.2.11",
+      "axios >= 0.16.2",
+      "axios.js >= 0.18.0"
     ]
   },
   "packageFolders": {
@@ -3905,6 +3941,14 @@
           "React.Web.Mvc4": {
             "target": "Package",
             "version": "[5.2.11, )"
+          },
+          "axios": {
+            "target": "Package",
+            "version": "[0.16.2, )"
+          },
+          "axios.js": {
+            "target": "Package",
+            "version": "[0.18.0, )"
           }
         },
         "imports": [

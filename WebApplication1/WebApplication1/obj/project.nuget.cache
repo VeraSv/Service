@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "qJ32R80CESqlpS38yBo5NZZmV1qLT/hkp7r9CghwmwhbbIk9t/un7flQ4Z+bkSg5eDxzLDhOgHuCCcJsDDETaA==",
+  "dgSpecHash": "vj4xnIr/lgQ3Y11jSk+TOevqoo2iMb69TV8uIKZMmTW0azE6RAr1wdyLdjza/wva2cTbVooJvP8s7HtjLRa9dg==",
   "success": true,
   "projectFilePath": "C:\\Users\\PC\\source\\repos\\Service\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\advancedstringbuilder\\0.1.0\\advancedstringbuilder.0.1.0.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\axios\\0.16.2\\axios.0.16.2.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\axios.js\\0.18.0\\axios.js.0.18.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\google.protobuf\\3.18.0\\google.protobuf.3.18.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\grpc.core.api\\2.39.1\\grpc.core.api.2.39.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\grpc.net.client\\2.39.0\\grpc.net.client.2.39.0.nupkg.sha512",

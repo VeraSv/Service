@@ -107,6 +107,14 @@
             "React.Web.Mvc4": {
               "target": "Package",
               "version": "[5.2.11, )"
+            },
+            "axios": {
+              "target": "Package",
+              "version": "[0.16.2, )"
+            },
+            "axios.js": {
+              "target": "Package",
+              "version": "[0.18.0, )"
             }
           },
           "imports": [
