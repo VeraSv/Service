@@ -7,8 +7,8 @@ package greet;
 // The greeting service definition.
 service Greeter {
   // Sends a greeting
- // rpc SayHello (HelloRequest) returns (HelloReply);
-  rpc upload(stream File) returns(FileUploadResponse);
+  rpc SayHello (HelloRequest) returns (HelloReply);
+  
 }
 
 // The request message containing the user's name.
@@ -20,14 +20,10 @@ message HelloRequest {
 message HelloReply {
   string message = 1;
 }
-/*message FileUploadRequest {
-    MetaData metadata = 1;
-    File file = 2;
-}*/
-message File {
-  bytes content = 1;
+
+/*message UploadFile {
+  bytes[] file = 1;
 }
 message FileUploadResponse {
-  string name = 1;
- //Status status = 2;
-}
+  string responce = 1;
+}*/

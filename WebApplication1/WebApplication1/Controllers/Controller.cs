@@ -23,10 +23,10 @@ namespace WebApplication1.Controllers
                     myFile.CopyTo(stream);
                     var fileButes = stream.ToArray();
 
-                    using var channel = GrpcChannel.ForAddress("https://localhost:5001");
+                  /*  using var channel = GrpcChannel.ForAddress("https://localhost:5001");
 
                     var client = new Greeter.GreeterClient(channel);
-                    var reply = await GreeterService1.GreeterService.upload(new File { content = fileButes });
+                    var reply = await GreeterService1.GreeterService.upload(new File { content = fileButes });*/
                 }                
                
 
