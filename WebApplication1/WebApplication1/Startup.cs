@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using React.AspNet;
 using JavaScriptEngineSwitcher.ChakraCore;
 using JavaScriptEngineSwitcher.Extensions.MsDependencyInjection;
-using GrpcService1;
 
 namespace WebApplication1
 {

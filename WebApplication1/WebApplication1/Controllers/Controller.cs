@@ -4,7 +4,7 @@ using System;
 using Microsoft.AspNetCore.Http;
 using WebApplication1.Models;
 using System.Threading.Tasks;
-using GrpcService1;
+
 using Grpc.Net.Client;
 using System.Net.Http;
 namespace WebApplication1.Controllers
@@ -14,8 +14,9 @@ namespace WebApplication1.Controllers
 
         [HttpPost]
         [Route("api/uploadfile")]
-        public async void AddFile(IFormFile myFile)
+        public Task<string> AddFile(IFormFile myFile)
         {
+            Task<string>  responce;
             if (myFile != null)
             {
                 using (var stream = new MemoryStream()) 
@@ -23,14 +24,16 @@ namespace WebApplication1.Controllers
                     myFile.CopyTo(stream);
                     var fileButes = stream.ToArray();
 
-                  /*  using var channel = GrpcChannel.ForAddress("https://localhost:5001");
+      
 
-                    var client = new Greeter.GreeterClient(channel);
-                    var reply = await GreeterService1.GreeterService.upload(new File { content = fileButes });*/
+                    ServiceReference3.Service1Client UploadFile = new ServiceReference3.Service1Client();
+                   responce=  UploadFile.GetDetailsAsync(fileButes);
+
                 }                
                
 
             }
+            return null;
         }
 
     }

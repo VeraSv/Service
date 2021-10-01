@@ -64,6 +64,15 @@ C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\bin\Debug\netco
 C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Security.AccessControl.dll
 C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
-C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.Resources.Resource.resources
-C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.csproj.GenerateResource.cache
+C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\Grpc.AspNetCore.Server.dll
+C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\Grpc.AspNetCore.Server.ClientFactory.dll
+C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\Grpc.Net.ClientFactory.dll
+C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\System.Private.ServiceModel.dll
+C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\System.ServiceModel.Duplex.dll
+C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\System.ServiceModel.Http.dll
+C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\System.ServiceModel.NetTcp.dll
+C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\System.ServiceModel.Primitives.dll
+C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\System.ServiceModel.dll
+C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\System.ServiceModel.Security.dll
 C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\Connected Services\ServiceReference3\ConnectedService.json
