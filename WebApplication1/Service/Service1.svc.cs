@@ -23,55 +23,74 @@ namespace Service
     {
         public string GetDetails(byte[] file)
         {
-           // ReadFile infoFile = new ReadFile();
+            // ReadFile infoFile = new ReadFile();
 
 
             StringBuilder sb = new StringBuilder();
             using (MemoryStream stream = new MemoryStream(file))
             {
+                /* Stream st = new MemoryStream(file); 
+                 FileStream fs =st as FileStream;
+                string name=fs.Name;
+                 string path = Path.GetFullPath(name);*/
                 stream.Position = 0;
-                
+
                 IWorkbook workbook = WorkbookFactory.Create(stream);
-               var sheet = workbook.GetSheetAt(0);
-               string stringCellValue="";
-                for (int row = 0; row <= sheet.LastRowNum; row++)
-                {
-                    var currentRow = sheet.GetRow(row);
-                    if (currentRow != null) 
-                    {
-                        for (int column = 0; column < 3; column++)
+                var sheet = workbook.GetSheetAt(0);
+                string stringCellValue = "";
+                
+                        for (int count = 1; count < sheet.GetRow(0).LastCellNum; count++)
                         {
-                            if (currentRow.GetCell(column)!=null)
+                            string key = "";
+                            string lang = "";
+                    string title = "";
+                            string value = "";
+                            for (int column = 0; column <=count; column += count)
                             {
-                                stringCellValue = currentRow.GetCell(column).StringCellValue;
+                        for (int row = 0; row <= sheet.LastRowNum; row++)
+                        {
+                            var currentRow = sheet.GetRow(row);
+                            if (currentRow != null)
+                            {
+                                if (currentRow.GetCell(column) != null)
+                                {
+                                    stringCellValue = currentRow.GetCell(column).StringCellValue;
+                                    if (String.IsNullOrEmpty(key)) key = stringCellValue;
+                                    else if (String.IsNullOrEmpty(title)) title = stringCellValue;
+                                   else  if (String.IsNullOrEmpty(lang)) lang = stringCellValue;
+                                    else value = stringCellValue;
+
+                                }
                                
-                               Resource newResource = new Resource { Value = stringCellValue };
-                                newResource.createResource();
                             }
+                           
                         }
+                       
                     }
+                    Resource newResource = new Resource { Key = key, Value = value };
+                    newResource.createResource();
                 }
 
 
-               
-                }
-            
+
+            }
+
             return "Created file";
         }
-        
+
     }
-   /* public class ApplicationContext : DbContext
-    {
-        public DbSet<ReadFile> Resources { get; set; }
+    /* public class ApplicationContext : DbContext
+     {
+         public DbSet<ReadFile> Resources { get; set; }
 
-        public ApplicationContext()
-        {
-            Database.EnsureCreated();
-        }
+         public ApplicationContext()
+         {
+             Database.EnsureCreated();
+         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=resourcesql;Trusted_Connection=True;");
-        }
-    }*/
+         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+         {
+             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=resourcesql;Trusted_Connection=True;");
+         }
+     }*/
 }

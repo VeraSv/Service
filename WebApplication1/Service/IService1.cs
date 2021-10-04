@@ -42,11 +42,15 @@ namespace Service
 
         [DataMember]
         public string Value { get; set; }
-        
+        [DataMember]
+        public string Key { get; set; }
+        [DataMember]
+        public string Comment { get; set; }
+
         public void createResource()
         {
-            ResXResourceWriter resx = new ResXResourceWriter("C:\\Resource" + "." + CultureInfo.CurrentCulture.Name + ".resx");
-            resx.AddResource("Title", Value);
+            ResXResourceWriter resx = new ResXResourceWriter("C:\\Resources" + "." + CultureInfo.CurrentCulture.Name + ".resx");
+            resx.AddResource("Key", Key);
             resx.AddResource("Value", Value);
         }
     }
