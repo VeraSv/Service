@@ -26,6 +26,7 @@ namespace WebApplication1
             services.AddJsEngineSwitcher(options => options.DefaultEngineName = ChakraCoreJsEngine.EngineName).AddChakraCore();
             services.AddControllers();
            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

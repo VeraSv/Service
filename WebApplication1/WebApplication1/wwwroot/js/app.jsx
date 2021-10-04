@@ -50,7 +50,7 @@ class App extends React.Component {
 
 		// Update the formData object
 		formData.append(
-			"myFile",
+			"Name",
 			this.state.selectedFile,
 			this.state.selectedFile.name
 		);

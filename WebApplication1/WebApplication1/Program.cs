@@ -16,12 +16,12 @@ namespace WebApplication1
     public class Program
     {
         public static void Main(string[] args)
+
         {
+                       
             CreateHostBuilder(args).Build().Run();
 
-           /* using var channel = GrpcChannel.ForAddress("https://localhost:5001");
-            var client = new Greeter.GreeterClient(channel);
-            var reply = client.SayHelloAsync(new HelloRequest { Name = "path" });*/
+        
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
