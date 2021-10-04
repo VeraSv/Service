@@ -27,7 +27,7 @@ namespace Service
 
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    [DataContract]
+  /*  [DataContract]
     public class ReadFile
     {
 
@@ -35,17 +35,17 @@ namespace Service
         [DataMember]
         public string info { get; set; }
 
-    }
-
+    }*/
+    [DataContract]
     public class Resource
     {
-       
-        
+
+        [DataMember]
         public string Value { get; set; }
         
         public void createResource()
         {
-            ResXResourceWriter resx = new ResXResourceWriter("C:\\Resources" + "." + CultureInfo.CurrentCulture.Name + ".resx");
+            ResXResourceWriter resx = new ResXResourceWriter("C:\\Resource" + "." + CultureInfo.CurrentCulture.Name + ".resx");
             resx.AddResource("Title", Value);
         }
     }

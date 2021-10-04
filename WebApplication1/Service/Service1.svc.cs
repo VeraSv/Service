@@ -23,14 +23,14 @@ namespace Service
     {
         public string GetDetails(byte[] file)
         {
-            ReadFile infoFile = new ReadFile();
+           // ReadFile infoFile = new ReadFile();
 
 
             StringBuilder sb = new StringBuilder();
             using (MemoryStream stream = new MemoryStream(file))
             {
                 stream.Position = 0;
-                 //XSSFWorkbook workbook = new XSSFWorkbook(stream);
+                
                 IWorkbook workbook = WorkbookFactory.Create(stream);
                var sheet = workbook.GetSheetAt(0);
                string stringCellValue="";
@@ -39,13 +39,15 @@ namespace Service
                     var currentRow = sheet.GetRow(row);
                     if (currentRow != null) 
                     {
-                        for (int column = 0; column < 3; column++)
+                        for (int column = 0; column <3 ; column++)
                         {
-                            stringCellValue = currentRow.GetCell(column).StringCellValue;
-
-                            Resource newResource = new Resource {Value=stringCellValue};
-                           
-                            
+                            if (currentRow.GetCell(column)!=null)
+                            {
+                                stringCellValue = currentRow.GetCell(column).StringCellValue;
+                               
+                               Resource newResource = new Resource { Value = stringCellValue };
+                                newResource.createResource();
+                            }
                         }
                     }
                 }
@@ -54,11 +56,11 @@ namespace Service
                
                 }
             
-            return "";
+            return "Created file";
         }
         
     }
-    public class ApplicationContext : DbContext
+   /* public class ApplicationContext : DbContext
     {
         public DbSet<ReadFile> Resources { get; set; }
 
@@ -71,5 +73,5 @@ namespace Service
         {
             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=resourcesql;Trusted_Connection=True;");
         }
-    }
+    }*/
 }

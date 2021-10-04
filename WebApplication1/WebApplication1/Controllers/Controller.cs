@@ -11,9 +11,9 @@ namespace WebApplication1.Controllers
     [Route("api/uploadfile")]
     public class FileController : Controller
     {
- 
+        string result="";
 
-        [HttpPost]
+       [HttpPost]
         public void AddFile(IFormFile newFile)
         {
 
@@ -28,6 +28,7 @@ namespace WebApplication1.Controllers
 
                     ServiceReference3.Service1Client UploadFile = new ServiceReference3.Service1Client();
                     var responce = UploadFile.GetDetailsAsync(fileBytes);
+                   result = responce.Result;
 
                 }
             }
@@ -38,7 +39,7 @@ namespace WebApplication1.Controllers
         public string ReadFile()
         {
 
-            return ("Upload");
+            return (result);
         }
 
         }

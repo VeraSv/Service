@@ -76,3 +76,4 @@ C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\obj\Release\net
 C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\WebApplication1.dll
 C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\WebApplication1.pdb
 C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\obj\Release\netcoreapp3.1\WebApplication1.genruntimeconfig.cache
+C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\bin\Release\netcoreapp3.1\web.config

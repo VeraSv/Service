@@ -55,7 +55,8 @@ class App extends React.Component {
 
 		// Update the formData object
 		formData.append(
-			"Name",
+			"newFile",
+			this.state.selectedFile,
 			this.state.selectedFile.name
 		);
 
@@ -113,7 +114,7 @@ class App extends React.Component {
 					File Upload using React!
 				</h3>
 				<div>
-					<input type="file" id="myFile" name="myFile" onChange={this.onFileChange} />
+					<input type="file" id="newFile" name="newFile" onChange={this.onFileChange} />
 					<button onClick={this.onFileUpload}>
 						Upload!
 					</button>
