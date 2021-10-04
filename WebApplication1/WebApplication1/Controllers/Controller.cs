@@ -11,39 +11,34 @@ namespace WebApplication1.Controllers
     [Route("api/uploadfile")]
     public class FileController : Controller
     {
+ 
 
         [HttpPost]
-        public void AddFile(FileModel newFile)
+        public void AddFile(IFormFile newFile)
         {
+
             if (newFile != null)
             {
-              // string path = Path.GetFullPath(newFile.Name);
-               /* using (var fileStream = new FileStream(path, FileMode.Create))
+              string path = Path.GetFullPath(newFile.Name);
+               /* using ()
                 {
-                    var stream = new MemoryStream();
-                    fileStream.CopyTo(stream);
-                    var fileButes = stream.ToArray();
-                }
-
-                    /*  Task<string>  responce;
-         if (myFile != null)
-         {
-             using (var stream = new MemoryStream()) 
-             {
-                 myFile.CopyTo(stream);
-                 var fileButes = stream.ToArray();
+                    // newFile.CopyTo(stream);
+                    //var fileBytes = stream.ToArray();
 
 
+                    //ServiceReference3.Service1Client UploadFile = new ServiceReference3.Service1Client();
+                    //var responce = UploadFile.GetDetailsAsync(fileBytes);
 
-                 ServiceReference3.Service1Client UploadFile = new ServiceReference3.Service1Client();
-                responce=  UploadFile.GetDetailsAsync(fileButes);
+                }*/
+            }
+        }
 
-             }                
 
+        [HttpGet]
+        public string ReadFile()
+        {
 
-         }*/
-                    //  return null;
-                }
+            return ("Upload");
         }
 
         }

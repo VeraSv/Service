@@ -43,21 +43,15 @@ namespace Service
                         {
                             stringCellValue = currentRow.GetCell(column).StringCellValue;
 
-                            ResXResourceWriter resx =new ResXResourceWriter("C:\\Resources" + "." +CultureInfo.CurrentCulture.Name + ".resx");
-                            resx.AddResource("Title", stringCellValue);
+                            Resource newResource = new Resource {Value=stringCellValue};
+                           
                             
                         }
                     }
                 }
 
 
-                List<ReadFile> list = new List<ReadFile>();
-                using (ApplicationContext db = new ApplicationContext())
-                {
-                    list = db.Resources.ToList();
-
-                }
-
+               
                 }
             
             return "";

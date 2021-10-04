@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Protos\**" />
+    <Content Remove="Protos\**" />
+    <EmbeddedResource Remove="Protos\**" />
+    <None Remove="Protos\**" />
+  </ItemGroup>
+
+  <ItemGroup>
 	  <PackageReference Include="axios" Version="0.16.2" />
 	  <PackageReference Include="axios.js" Version="0.18.0" />
     <PackageReference Include="Google.Protobuf" Version="3.18.0" />
@@ -30,10 +37,6 @@
     <PackageReference Include="System.ServiceModel.Http" Version="4.7.*" />
     <PackageReference Include="System.ServiceModel.NetTcp" Version="4.7.*" />
     <PackageReference Include="System.ServiceModel.Security" Version="4.7.*" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Protos\" />
   </ItemGroup>
 
 </Project>

@@ -27,7 +27,12 @@
 
 
 class App extends React.Component {
+	componentDidMount() {
+		axios.get("api/uploadfile").then(resp => {
 
+			console.log(resp.data);
+		});
+    }
 	state = {
 
 		// Initially, no file is selected
@@ -50,7 +55,7 @@ class App extends React.Component {
 
 		// Update the formData object
 		formData.append(
-			"Name",
+			"newFile",
 			this.state.selectedFile,
 			this.state.selectedFile.name
 		);
@@ -66,6 +71,7 @@ class App extends React.Component {
 
 	// File content to be displayed after
 	// file upload is complete
+	
 	fileData = () => {
 
 		if (this.state.selectedFile) {
@@ -108,12 +114,13 @@ class App extends React.Component {
 					File Upload using React!
 				</h3>
 				<div>
-					<input type="file" id="myFile" name="myFile" onChange={this.onFileChange} />
+					<input type="file" id="newFile" name="newFile" onChange={this.onFileChange} />
 					<button onClick={this.onFileUpload}>
 						Upload!
 					</button>
 				</div>
 				{this.fileData()}
+				
 			</div>
 		);
 	}

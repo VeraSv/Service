@@ -75,3 +75,4 @@ C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\bin\Debug\netco
 C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\System.ServiceModel.dll
 C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\System.ServiceModel.Security.dll
 C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\Connected Services\ServiceReference3\ConnectedService.json
+C:\Users\PC\source\repos\Service\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\web.config

@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using System.Globalization;
+using System.Resources;
 
 namespace Service
 {
@@ -38,12 +39,14 @@ namespace Service
 
     public class Resource
     {
-        public int Id { get; set; }
-        public string Key { get; set; }
+       
+        
         public string Value { get; set; }
-        public Resource()
+        
+        public void createResource()
         {
-            Id = Value.GetHashCode();
+            ResXResourceWriter resx = new ResXResourceWriter("C:\\Resources" + "." + CultureInfo.CurrentCulture.Name + ".resx");
+            resx.AddResource("Title", Value);
         }
     }
 }
