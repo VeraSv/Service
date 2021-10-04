@@ -20,16 +20,16 @@ namespace WebApplication1.Controllers
             if (newFile != null)
             {
               string path = Path.GetFullPath(newFile.Name);
-               /* using ()
+               using (MemoryStream stream= new MemoryStream())
                 {
-                    // newFile.CopyTo(stream);
-                    //var fileBytes = stream.ToArray();
+                    newFile.CopyTo(stream);
+                    var fileBytes = stream.ToArray();
 
 
-                    //ServiceReference3.Service1Client UploadFile = new ServiceReference3.Service1Client();
-                    //var responce = UploadFile.GetDetailsAsync(fileBytes);
+                    ServiceReference3.Service1Client UploadFile = new ServiceReference3.Service1Client();
+                    var responce = UploadFile.GetDetailsAsync(fileBytes);
 
-                }*/
+                }
             }
         }
 
