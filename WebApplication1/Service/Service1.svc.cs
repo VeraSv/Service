@@ -39,7 +39,7 @@ namespace Service
                     var currentRow = sheet.GetRow(row);
                     if (currentRow != null) 
                     {
-                        for (int column = 0; column <3 ; column++)
+                        for (int column = 0; column < 3; column++)
                         {
                             if (currentRow.GetCell(column)!=null)
                             {

@@ -47,6 +47,7 @@ namespace Service
         {
             ResXResourceWriter resx = new ResXResourceWriter("C:\\Resource" + "." + CultureInfo.CurrentCulture.Name + ".resx");
             resx.AddResource("Title", Value);
+            resx.AddResource("Value", Value);
         }
     }
 }

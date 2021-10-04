@@ -19,7 +19,7 @@ namespace WebApplication1.Controllers
 
             if (newFile != null)
             {
-              string path = Path.GetFullPath(newFile.Name);
+              //string path = Path.GetFullPath(newFile.Name);
                using (MemoryStream stream= new MemoryStream())
                 {
                     newFile.CopyTo(stream);
