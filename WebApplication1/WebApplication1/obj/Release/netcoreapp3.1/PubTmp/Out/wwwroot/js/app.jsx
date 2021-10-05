@@ -67,6 +67,7 @@ class App extends React.Component {
 		// Send formData object
 		
 		axios.post("api/uploadfile", formData);
+		this.setState{ selectedFile:null }
 	};
 
 	// File content to be displayed after

@@ -44,8 +44,9 @@ class App extends React.Component {
 
 		// Update the state
 		this.setState({ selectedFile: event.target.files[0] });
-
+		event.target.value = '';
 	};
+	
 
 	// On file upload (click the upload button)
 	onFileUpload = () => {
@@ -65,9 +66,13 @@ class App extends React.Component {
 
 		// Request made to the backend api
 		// Send formData object
+
+		axios.post("api/uploadfile", formData)
+			
 		
-		axios.post("api/uploadfile", formData);
+		
 	};
+	
 
 	// File content to be displayed after
 	// file upload is complete
@@ -114,10 +119,12 @@ class App extends React.Component {
 					File Upload using React!
 				</h3>
 				<div>
+					
 					<input type="file" id="newFile" name="newFile" onChange={this.onFileChange} />
-					<button onClick={this.onFileUpload}>
+					<button onClick={ this.onFileUpload}>
 						Upload!
-					</button>
+						</button>
+					
 				</div>
 				{this.fileData()}
 				

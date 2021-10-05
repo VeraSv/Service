@@ -38,15 +38,16 @@ namespace Service
                 IWorkbook workbook = WorkbookFactory.Create(stream);
                 var sheet = workbook.GetSheetAt(0);
                 string stringCellValue = "";
-                
-                        for (int count = 1; count < sheet.GetRow(0).LastCellNum; count++)
-                        {
-                            string key = "";
-                            string lang = "";
-                    string title = "";
-                            string value = "";
-                            for (int column = 0; column <=count; column += count)
-                            {
+
+               
+                for (int count = 1; count < sheet.GetRow(0).LastCellNum; count++)
+                {
+                  
+                   List <string> keyArray =new List <string>();
+                    List<string> valueArray = new List<string>();
+                   
+                    for (int column = 0; column <= count; column += count)
+                    {
                         for (int row = 0; row <= sheet.LastRowNum; row++)
                         {
                             var currentRow = sheet.GetRow(row);
@@ -55,20 +56,25 @@ namespace Service
                                 if (currentRow.GetCell(column) != null)
                                 {
                                     stringCellValue = currentRow.GetCell(column).StringCellValue;
-                                    if (String.IsNullOrEmpty(key)) key = stringCellValue;
+                                    if (column == 0)
+                                    {
+                                        keyArray.Add(stringCellValue);
+                                    }
+                                    else valueArray.Add(stringCellValue);
+                                   /* if (String.IsNullOrEmpty(key)) key = stringCellValue;
                                     else if (String.IsNullOrEmpty(title)) title = stringCellValue;
-                                   else  if (String.IsNullOrEmpty(lang)) lang = stringCellValue;
-                                    else value = stringCellValue;
+                                    else if (String.IsNullOrEmpty(lang)) lang = stringCellValue;
+                                    else value = stringCellValue;*/
 
                                 }
-                               
+
                             }
-                           
+
                         }
-                       
+
                     }
-                    Resource newResource = new Resource { Key = key, Value = value };
-                    newResource.createResource();
+                   Resource newResource = new Resource { Key = keyArray, Value = valueArray };
+                    newResource.GetLanguage();
                 }
 
 

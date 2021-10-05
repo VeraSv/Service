@@ -36,10 +36,10 @@ namespace WebApplication1.Controllers
 
 
         [HttpGet]
-        public string ReadFile()
+        public void ReadFile()
         {
 
-            return (result);
+         
         }
 
         }
